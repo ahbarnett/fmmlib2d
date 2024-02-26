@@ -22,7 +22,7 @@ ifeq ($(HOST),macosx)
 OBJSUF=o
 MODSUF=mod
 FC=gfortran -c 
-FFLAGS=-O2
+FFLAGS=-O2 -std=legacy
 FLINK=gfortran -o $(PROJECT)
 
 else
@@ -32,7 +32,7 @@ ifeq ($(HOST),linux-gfortran)
 OBJSUF=o
 MODSUF=mod
 FC=gfortran -c 
-FFLAGS=-O2
+FFLAGS=-O2 -std=legacy
 FLINK=gfortran -o $(PROJECT)
 
 else
@@ -43,7 +43,7 @@ ifeq ($(HOST),linux-gfortran-openmp)
 OBJSUF=o
 MODSUF=mod
 FC=gfortran -c 
-FFLAGS=-O3 --openmp
+FFLAGS=-O3 --openmp -std=legacy
 FLINK=gfortran -o $(PROJECT) --openmp
 ### export OMP_NUM_THREADS=4
 ### export OMP_STACKSIZE=1024M
